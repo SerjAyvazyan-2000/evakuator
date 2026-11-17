@@ -277,7 +277,8 @@
 
   /* ---------- модалка политики ---------- */
   const modal = $("#privacy");
-  $$("[data-open]").forEach((b) => b.addEventListener("click", () => {
+  $$("[data-open]").forEach((b) => b.addEventListener("click", (e) => {
+    e.preventDefault();
     if (typeof modal.showModal === "function") modal.showModal(); else modal.setAttribute("open", "");
     const a = b.dataset.anchor && modal.querySelector("#" + b.dataset.anchor);
     if (a) setTimeout(() => a.scrollIntoView({ block: "start" }), 50); else modal.scrollTop = 0;

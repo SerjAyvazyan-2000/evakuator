@@ -553,3 +553,11 @@ body.menu-open .callbar { transform: translateY(150%); }
 .nav .nav__foot .btn { color: var(--accent-ink); }
 .nav .nav__foot .btn::after { display: none; }
 @media (max-width: 960px) { .nav > a::before { min-width: 2.2em; } }
+
+/* форма: подписи полей в одну строку, ссылки в согласии переносятся как обычный текст */
+.field span { right: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.field input:focus + span, .field input:not(:placeholder-shown) + span,
+.field textarea:focus + span, .field textarea:not(:placeholder-shown) + span { right: auto; max-width: calc(100% / .76 - 48px); }
+.check__text { min-width: 0; line-height: 1.5; }
+.check .link { display: inline; }
+.form__row > * { min-width: 0; }
